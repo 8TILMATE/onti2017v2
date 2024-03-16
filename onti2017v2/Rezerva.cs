@@ -24,12 +24,30 @@ namespace onti2017v2
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            label2.Text="Pret: "+ (model1.Pret*Int32.Parse(textBox1.Text)).ToString();
+            try
+            {
+                label2.Text = "Pret: " + (model1.Pret * Int32.Parse(textBox1.Text)).ToString();
+            }
+            catch
+            {
+                label2.Text = "";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-         
+            RezervariModel model = new RezervariModel();
+            model.Pret = model1.Pret * Int32.Parse(textBox1.Text);
+            model.IdVacanta = model1.Id;
+            model.IdUser = user1.id;
+            model.DataSt = dateTimePicker1.Value;
+            model.Datasf = dateTimePicker2.Value;
+            DatabaseHelper.InsertRezervari(model);
+            this.Hide
+                ();
+            FrmVacanta frmVacanta = new FrmVacanta(user1);
+            frmVacanta.ShowDialog();
+            this.Close();
         }
     }
 }

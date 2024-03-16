@@ -9,6 +9,6 @@ namespace onti2017v2.Models
     public  class UserModel
     {
         public string Nume, Prenume, Email, Parola;
-        public int TipCont;
+        public int TipCont,id;
     }
 }

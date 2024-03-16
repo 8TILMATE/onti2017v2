@@ -49,7 +49,7 @@ namespace onti2017v2
                 UserModel userModel = new UserModel();
                 userModel.Nume = textBox1.Text; userModel.Prenume = textBox2.Text;
                 userModel.Email = textBox3.Text; userModel.Parola = textBox4.Text;
-                userModel.TipCont = 0;
+                userModel.TipCont = 1;
                 DatabaseHelper.InsertUser(userModel);
             }
         }
